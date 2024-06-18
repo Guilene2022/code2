@@ -1,0 +1,31 @@
+---
+- hosts: ws 
+  become: yes
+  become_user: root
+  ignore_errors: yes
+  tasks:
+    - name: install packages
+      yum:
+        state: present
+        name:
+          - wget
+          - lsof
+          - passwd
+          - unzip
+          - java-11*
+          - httpd
+    - name: create directory
+      file:
+        path: /opt/qa/spg
+        state: directory
+        mode: '0755'
+    - name: create log file
+      file:
+      path: /opt/qa/spg.log
+      state: touch
+    - name: starting service
+      systemd_service:
+        name: httpd
+        state: present
+        enabled: yes
+          
