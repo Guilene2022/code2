@@ -23,8 +23,8 @@
         mode: '0755'
     - name: create log file
       file:
-      path: /opt/qa/spg.log
-      state: touch
+        path: /opt/qa/spg.log
+        state: touch
     - name: starting service
       systemd_service:
         name: httpd
