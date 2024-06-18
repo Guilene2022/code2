@@ -8,6 +8,7 @@
       yum:
         state: present
         name:
+          - docker
           - wget
           - lsof
           - passwd
