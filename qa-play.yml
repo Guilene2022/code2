@@ -14,6 +14,7 @@
           - unzip
           - java-11*
           - httpd
+          - git
           
     - name: create directory
       file:
