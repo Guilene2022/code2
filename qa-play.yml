@@ -29,5 +29,5 @@
       systemd:
         name: httpd
         state: present
-        enabled: started
+        enabled: yes
           
